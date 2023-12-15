@@ -1,0 +1,44 @@
+            - name: Setup Java JDK            - name: setup java jdk
+  uses: actions/setup-java@v4.0.0
+  with:
+    # the java version to set up. takes a whole or semver java version. see examples of supported syntax in readme file
+    java-version: # optional
+    # the path to the `.java-version` file. see examples of supported syntax in readme file
+    java-version-file: # optional
+    # java distribution. see the list of supported distributions in readme file
+    distribution: 
+    # the package type (jdk, jre, jdk+fx, jre+fx)
+    java-package: # optional, default is jdk
+    # the architecture of the package (defaults to the action runner's architecture)
+    architecture: # optional
+    # path to where the compressed jdk is located
+    jdkfile: # optional
+    # set this option if you want the action to check for the latest available version that satisfies the version spec
+    check-latest: # optional
+    # id of the distributionmanagement repository in the pom.xml file. default is `github`
+    server-id: # optional, default is github
+    # environment variable name for the username for authentication to the apache maven repository. default is $github_actor
+    server-username: # optional, default is github_actor
+    # environment variable name for password or token for authentication to the apache maven repository. default is $github_token
+    server-password: # optional, default is github_token
+    # path to where the settings.xml file will be written. default is ~/.m2.
+    settings-path: # optional
+    # overwrite the settings.xml file if it exists. default is "true".
+    overwrite-settings: # optional, default is true
+    # gpg private key to import. default is empty string.
+    gpg-private-key: # optional
+    # environment variable name for the gpg private key passphrase. default is $gpg_passphrase.
+    gpg-passphrase: # optional
+    # name of the build platform to cache dependencies. it can be "maven", "gradle" or "sbt".
+    cache: # optional
+    # the path to a dependency file: pom.xml, build.gradle, build.sbt, etc. this option can be used with the `cache` option. if this option is omitted, the action searches for the dependency file in the entire repository. this option supports wildcards and a list of file names for caching multiple dependencies.
+    cache-dependency-path: # optional
+    # workaround to pass job status to post job step. this variable is not intended for manual setting
+    job-status: # optional, default is ${{ job.status }}
+    # the token used to authenticate when fetching version manifests hosted on github.com, such as for the microsoft build of openjdk. when running this action on github.com, the default value is sufficient. when running on ghes, you can pass a personal access token for github.com if you are experiencing rate limiting.
+    token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
+    # name of maven toolchain id if the default name of "${distribution}_${java-version}" is not wanted. see examples of supported syntax in advanced usage file
+    mvn-toolchain-id: # optional
+    # name of maven toolchain vendor if the default name of "${distribution}" is not wanted. see examples of supported syntax in advanced usage file
+    mvn-toolchain-vendor: # optional
+          ￼enter
